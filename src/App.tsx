@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { IconContext } from 'react-icons'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import HomePage from './pages/HomePage'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <IconContext.Provider
+      value={{
+        style: { verticalAlign: 'middle' },
+      }}
+    >
+      <BrowserRouter>
+        <div className="min-h-screen flex flex-col">
+          <header className="flex justify-center items-center bg-blue-500 h-16">
+            <h1 className="text-2xl font-bold text-white">React Module 5</h1>
+          </header>
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+            </Routes>
+          </main>
+          <footer className="flex justify-center items-center bg-blue-500 h-10">
+            <h4 className="text-md font-bold text-white">IGTI</h4>
+          </footer>
+        </div>
+      </BrowserRouter>
+    </IconContext.Provider>
+  )
 }
-
-export default App;
