@@ -1,0 +1,60 @@
+*, ::before, ::after {
+    --top-4-color: darkblue;
+    --bottom-4-color: red;
+}
+
+tr.space-between-cells th {
+    padding-right: 50px;
+}
+
+tr.space-between-cells th:first-child, tr.space-between-cells td:first-child {
+    padding-left: 20px;
+}
+
+tr.space-between-cells:nth-child(1) td:first-child {
+    color: var(--top-4-color);
+    font-weight: 600;
+}
+
+tr.space-between-cells:nth-child(2) td:first-child {
+    color: var(--top-4-color);
+    font-weight: 600;
+}
+
+tr.space-between-cells:nth-child(3) td:first-child {
+    color: var(--top-4-color);
+    font-weight: 600;
+}
+
+tr.space-between-cells:nth-child(4) td:first-child {
+    color: var(--top-4-color);
+    font-weight: 600;
+}
+
+tr.space-between-cells:nth-last-child(1) td:first-child {
+    color: var(--bottom-4-color);
+    font-weight: 600;
+}
+
+tr.space-between-cells:nth-last-child(2) td:first-child {
+    color: var(--bottom-4-color);
+    font-weight: 600;
+}
+
+tr.space-between-cells:nth-last-child(3) td:first-child {
+    color: var(--bottom-4-color);
+    font-weight: 600;
+}
+
+tr.space-between-cells:nth-last-child(4) td:first-child {
+    color: var(--bottom-4-color);
+    font-weight: 600;
+}
+
+tr.space-between-cells th:last-child {
+    padding-right: 20px;
+}
+
+tr.space-between-cells:nth-child(even) {
+    background-color: lightgray;
+}
