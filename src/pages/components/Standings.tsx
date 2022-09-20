@@ -1,14 +1,14 @@
-import { TeamRecord } from "../../models/TeamRecord";
-import styles from "./Standings.module.css";
+import { TeamRecord } from '../../models/TeamRecord'
+import styles from './Standings.module.css'
 
-type StandingsParams = { teamsRecords: TeamRecord[] };
+type StandingsParams = { teamsRecords: TeamRecord[] }
 
 export default function Standings({ teamsRecords }: StandingsParams) {
   return (
     <div>
       <table className="border">
         <thead>
-          <tr className={`border ${styles["space-between-cells"]}`}>
+          <tr className={`border ${styles['space-between-cells']}`}>
             <th colSpan={2}>CLASSIFICAÇÃO</th>
             <th>P</th>
             <th>J</th>
@@ -22,7 +22,7 @@ export default function Standings({ teamsRecords }: StandingsParams) {
         </thead>
         <tbody>
           {teamsRecords.map((teamRecord, i) => (
-            <tr key={i} className={`border ${styles["space-between-cells"]}`}>
+            <tr key={i} className={`border ${styles['space-between-cells']}`}>
               <td>{i + 1}</td>
               <td>{teamRecord.team}</td>
               <td>{teamRecord.record.total_pontos}</td>
@@ -41,5 +41,5 @@ export default function Standings({ teamsRecords }: StandingsParams) {
         </tbody>
       </table>
     </div>
-  );
+  )
 }

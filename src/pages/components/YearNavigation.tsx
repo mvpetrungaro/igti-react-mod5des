@@ -1,12 +1,12 @@
-import { RiArrowLeftSFill, RiArrowRightSFill } from "react-icons/ri";
-import { SequenceGenerator } from "../../utils/ArrayUtils";
+import { RiArrowLeftSFill, RiArrowRightSFill } from 'react-icons/ri'
+import { SequenceGenerator } from '../../utils/ArrayUtils'
 
 type YearNavigationParam = {
-  selectedYear: number;
-  onPrevious: () => void;
-  onNext: () => void;
-  onSelect: (selectedYear: number) => void;
-};
+  selectedYear: number
+  onPrevious: () => void
+  onNext: () => void
+  onSelect: (selectedYear: number) => void
+}
 
 export default function YearNavigation({
   selectedYear,
@@ -16,15 +16,17 @@ export default function YearNavigation({
 }: YearNavigationParam) {
   function handleYearChange(yearSelection: string) {
     if (!!onSelect) {
-      onSelect(+yearSelection);
+      onSelect(+yearSelection)
     }
   }
 
   return (
     <nav className="flex space-x-2">
-      <button onClick={onPrevious}>
-        <RiArrowLeftSFill style={{ fontSize: "1.8em", margin: "-5 0" }} />
-      </button>
+      {selectedYear > 2003 && (
+        <button onClick={onPrevious}>
+          <RiArrowLeftSFill style={{ fontSize: '1.8em', margin: '-5 0' }} />
+        </button>
+      )}
       <select
         className="border border-black px-2"
         value={selectedYear}
@@ -36,9 +38,11 @@ export default function YearNavigation({
           </option>
         ))}
       </select>
-      <button onClick={onNext}>
-        <RiArrowRightSFill style={{ fontSize: "1.8em", margin: "-5 0" }} />
-      </button>
+      {selectedYear < 2015 && (
+        <button onClick={onNext}>
+          <RiArrowRightSFill style={{ fontSize: '1.8em', margin: '-5 0' }} />
+        </button>
+      )}
     </nav>
-  );
+  )
 }
