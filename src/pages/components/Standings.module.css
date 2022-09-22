@@ -1,12 +1,22 @@
 *,
 ::before,
 ::after {
-  --top-4-color: darkblue;
+  --top-4-color: blue;
   --bottom-4-color: red;
+}
+
+tr.space-between-cells th,
+tr.space-between-cells td {
+  padding: 5px 0;
 }
 
 tr.space-between-cells th {
   padding-right: 50px;
+}
+
+tr.space-between-cells td:first-child {
+  font-weight: 700 !important;
+  color: #9ca3af;
 }
 
 tr.space-between-cells th:first-child,
